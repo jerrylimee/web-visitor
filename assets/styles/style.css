@@ -310,13 +310,16 @@
 
 #homepage-grid {
     width: 500px;
-    height: 180px;
-    margin-left: calc(50% - 250px);
+    height: 160px;
+    margin-left: calc(50% - 256px);
     margin-top: calc(50% - 200px);
     display: grid;
     grid-template-columns: 1fr 1fr;
     overflow: hidden;
-    gap: 2px;
+    gap: 3px;
+    border-radius: 16px;
+    padding: 6px;
+    background-color: #DCEDC1;
 }
 
 #homepage-grid img {
@@ -326,7 +329,6 @@
 #homepage-grid a {
     text-decoration: none;
     color: inherit;
-    border-radius: 10px;
 }
 
 #homepage-grid>a span {
@@ -341,10 +343,36 @@
     display: flex;
     justify-content: start;
     align-items: center;
+    border-radius: 10px;
+    background-color: hsl(83, 55%, 74%);
+}
+
+#homepage-grid #homepage-gallery {
+    border-bottom-right-radius: 6px;
+    border-bottom-left-radius: 6px;
+    border-top-right-radius: 6px;
+}
+
+#homepage-grid #homepage-resume {
+    border-bottom-right-radius: 6px;
+    border-bottom-left-radius: 6px;
+    border-top-left-radius: 6px;
+}
+
+#homepage-grid #homepage-resume-pdf {
+    border-top-right-radius: 6px;
+    border-top-left-radius: 6px;
+    border-bottom-right-radius: 6px;
+}
+
+#homepage-grid #homepage-contacts {
+    border-top-right-radius: 6px;
+    border-top-left-radius: 6px;
+    border-bottom-left-radius: 6px;
 }
 
 #homepage-grid>a:hover {
-    background-color: rgb(237, 237, 237);
+    background-color: hsl(83, 55%, 80%);
 }
 
 @media (prefers-color-scheme: dark) {
