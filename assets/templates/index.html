@@ -3,154 +3,62 @@
 <div id="sky-backdrop"></div>
 
 <style>
-    /* styling for home page readability concerns */
 
-    body {
-        margin: 0;
-    }
-
-    #counter-buttons {
-        opacity: 0;
-        transition: all 0.2s;
-    }
-
-    #counter.expand #counter-buttons {
-        opacity: 1;
-    }
-
-    #counter-buttons:hover {
-        opacity: 1;
-    }
-
-    .content-unit {
-        margin-top: 0;
-        height: 100vh;
-        width: 100%;
-        margin-left: 0;
-    }
 </style>
 
 <div class="content-unit">
-    <div class="sky-note-box">
-        <div class="sky-note">
-            <span class="material-symbols-outlined">block</span>
-            <span>
-                This website does not contain AI-generated content. <a
-                    href="https://blog.jerryly.cn/posts/20260904.html">Learn more.</a>
+    <div id="homepage-grid">
+        <div class="text-n sky-card-title">
+            <span id="my-signature">
+                <img id="my-logo" src="https://media.jerryly.cn/home-square-dark.svg" />
             </span>
+            李江源
             <span>
-                本网站不含 AI 生成内容。 <a href="https://blog.jerryly.cn/posts/20260904.html">了解更多。</a>
+                <img id="my-sign" src="https://media.jerryly.cn/May-20-2026-signature.svg" />
             </span>
         </div>
-    </div>
-    <div id="index-tiles">
-        <div class="index-intermediate" id="index-intermediate-1">
-            <div class="index-tile"></div>
-            <div class="index-tile"></div>
-            <div class="index-tile">
-                <div id="my-signature">
-                    <img id="my-logo" src="https://media.jerryly.cn/home-square-dark.svg" />
-                </div>
-            </div>
-            <div class="index-tile"></div>
-            <div class="index-tile"></div>
-        </div>
-        <div class="index-intermediate" id="index-intermediate-2">
-            <div class="index-tile"></div>
-            <div class="index-tile"></div>
-            <div class="index-tile">
-                <div id="sky-bottom-block">
-                    <span class="text-n sky-card-title">李江源</span>
-                    <span class="text-n sky-card-text">
-                        <a class="sky-email" href="mailto:jerrylimee@icloud.com">
-                            <span class="material-symbols-outlined">mail</span>
-                            <span id="sky-actual-email-string">jerrylimee@icloud.com</span>
-                        </a>
-                    </span>
-                </div>
-            </div>
-            <div class="index-tile"></div>
-            <div class="index-tile"></div>
-        </div>
-        <div class="index-intermediate" id="index-intermediate-3">
-            <div class="index-tile"></div>
-            <div class="index-tile"></div>
-            <div class="index-tile sky-signature">
-                <button id="sky-flip-card">
-                    <img id="my-sign" src="https://media.jerryly.cn/May-20-2026-signature.svg" />
-                </button>
-            </div>
-            <div class="index-tile"></div>
-            <div class="index-tile"></div>
-        </div>
-    </div>
-    <div id="sky-layout">
-        <div class="sky-card sky-more">
-            <ul>
-                <a href="https://jerryly.cn/pages/gallery.html">
-                    <li>
-                        <span class="material-symbols-outlined">
-                            gallery_thumbnail
-                        </span>
-                        Gallery
-                    </li>
-                </a>
-                <a href="https://jerryly.cn/pages/resume.html">
-                    <li>
-                        <span class="material-symbols-outlined">
-                            account_box
-                        </span>
-                        Resume
-                    </li>
-                </a>
-                <a
-                    href="https://raw.githubusercontent.com/jerrylimes/jerrylimes/refs/heads/main/Resume%20(Mar%2014%202026).pdf">
-                    <li>
-                        <span class="material-symbols-outlined">
-                            account_box
-                        </span>
-                        Resume (PDF)
-                    </li>
-                </a>
-                <a href="../pages/contacts.html">
-                    <li>
-                        <span class="material-symbols-outlined">
-                            headset_mic
-                        </span>
-                        Contacts
-                    </li>
-                </a>
-            </ul>
-        </div>
-    </div>
-    <div class="sky-note-button">
-        <div class="sky-note">
-            <span class="material-symbols-outlined">pause</span>
-        </div>
+        <span class="text-n sky-card-text">
+            <a class="sky-email" href="mailto:jerrylimee@icloud.com">
+                <span class="material-symbols-outlined">mail</span>
+                <span id="sky-actual-email-string">jerrylimee@icloud.com</span>
+            </a>
+        </span>
+        <a href="https://jerryly.cn/pages/gallery.html">
+            <span>
+                <span class="material-symbols-outlined">
+                    gallery_thumbnail
+                </span>
+                Gallery
+            </span>
+        </a>
+        <a href="https://jerryly.cn/pages/resume.html">
+            <span>
+                <span class="material-symbols-outlined">
+                    account_box
+                </span>
+                Resume
+            </span>
+        </a>
+        <a
+            href="https://raw.githubusercontent.com/jerrylimes/jerrylimes/refs/heads/main/Resume%20(Mar%2014%202026).pdf">
+            <span>
+                <span class="material-symbols-outlined">
+                    account_box
+                </span>
+                Resume (PDF)
+            </span>
+        </a>
+        <a href="../pages/contacts.html">
+            <span>
+                <span class="material-symbols-outlined">
+                    headset_mic
+                </span>
+                Contacts
+            </span>
+        </a>
     </div>
 </div>
 
 <div class="empty-box"></div>
-
-<script>
-    $("#sky-flip-card").click(() => {
-        $("#sky-layout").toggleClass("gap-enable");
-        $(".sky-more").toggleClass("show");
-    });
-    $(".sky-note-button").click(function () {
-        const icon = $(this).find(".material-symbols-outlined");
-        const isPaused = icon.text().trim() === "pause";
-
-        document.getAnimations().forEach((animation) => {
-            if (isPaused) {
-                animation.pause();
-            } else {
-                animation.play();
-            }
-        });
-
-        icon.text(isPaused ? "play_arrow" : "pause");
-    });
-</script>
 
 {% endblock %}

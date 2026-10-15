@@ -10,6 +10,521 @@
     }
 </style>
 
+<style>
+    #index-tiles {
+        width: 100%;
+        height: 100vh;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .index-intermediate {
+        height: 100%;
+        display: grid;
+        grid-template-rows: repeat(5, 1fr);
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    @keyframes changeColorFirstRow {
+        0% {
+            background-color: #CEE2EE;
+        }
+
+        50% {
+            background-color: #C6E7ED;
+        }
+
+        100% {
+            background-color: #C4EDD0;
+        }
+    }
+
+    @keyframes changeColorSecondRow {
+        0% {
+            background-color: #88A7BA;
+        }
+
+        50% {
+            background-color: #8DB3BA;
+        }
+
+        100% {
+            background-color: #8FBA9C;
+        }
+    }
+
+    @keyframes changeColorThirdRow {
+        0% {
+            background-color: #486F87;
+        }
+
+        50% {
+            background-color: #4C7E87;
+        }
+
+        100% {
+            background-color: #4D875E;
+        }
+    }
+
+    @keyframes changeColorFourthRow {
+        0% {
+            background-color: #1C3F54;
+        }
+
+        50% {
+            background-color: #1E4C54;
+        }
+
+        100% {
+            background-color: #1F542F;
+        }
+    }
+
+    @keyframes changeColorFifthRow {
+        0% {
+            background-color: #072233;
+        }
+
+        50% {
+            background-color: #082D33;
+        }
+
+        100% {
+            background-color: #093315;
+        }
+    }
+
+    #index-intermediate-1 .index-tile:nth-child(1) {
+        background-color: #CEE2EE;
+        animation: changeColorFirstRow 10s alternate infinite;
+        animation-delay: 0.4s;
+    }
+
+    #index-intermediate-1 .index-tile:nth-child(2) {
+        background-color: #88A7BA;
+        animation: changeColorSecondRow 10s alternate infinite;
+        animation-delay: 0.8s;
+    }
+
+    #index-intermediate-1 .index-tile:nth-child(3) {
+        background-color: #486F87;
+        animation: changeColorThirdRow 10s alternate infinite;
+        animation-delay: 1.2s;
+    }
+
+    #index-intermediate-1 .index-tile:nth-child(4) {
+        background-color: #1C3F54;
+        animation: changeColorFourthRow 10s alternate infinite;
+        animation-delay: 1.6s;
+    }
+
+    #index-intermediate-1 .index-tile:nth-child(5) {
+        background-color: #072233;
+        animation: changeColorFifthRow 10s alternate infinite;
+        animation-delay: 2s;
+    }
+
+    #index-intermediate-2 .index-tile:nth-child(1) {
+        background-color: #CEE2EE;
+        animation: changeColorFirstRow 10s alternate infinite;
+        animation-delay: 2.4s;
+    }
+
+    #index-intermediate-2 .index-tile:nth-child(2) {
+        background-color: #88A7BA;
+        animation: changeColorSecondRow 10s alternate infinite;
+        animation-delay: 2.8s;
+    }
+
+    #index-intermediate-2 .index-tile:nth-child(3) {
+        background-color: #486F87;
+        animation: changeColorThirdRow 10s alternate infinite;
+        animation-delay: 3.2s;
+    }
+
+    #index-intermediate-2 .index-tile:nth-child(4) {
+        background-color: #1C3F54;
+        animation: changeColorFourthRow 10s alternate infinite;
+        animation-delay: 3.6s;
+    }
+
+    #index-intermediate-2 .index-tile:nth-child(5) {
+        background-color: #072233;
+        animation: changeColorFifthRow 10s alternate infinite;
+        animation-delay: 4s;
+    }
+
+    #index-intermediate-3 .index-tile:nth-child(1) {
+        background-color: #CEE2EE;
+        animation: changeColorFirstRow 10s alternate infinite;
+        animation-delay: 4.4s;
+    }
+
+    #index-intermediate-3 .index-tile:nth-child(2) {
+        background-color: #88A7BA;
+        animation: changeColorSecondRow 10s alternate infinite;
+        animation-delay: 4.8s;
+    }
+
+    #index-intermediate-3 .index-tile:nth-child(3) {
+        background-color: #486F87;
+        animation: changeColorThirdRow 10s alternate infinite;
+        animation-delay: 5.2s;
+    }
+
+    #index-intermediate-3 .index-tile:nth-child(4) {
+        background-color: #1C3F54;
+        animation: changeColorFourthRow 10s alternate infinite;
+        animation-delay: 5.6s;
+    }
+
+    #index-intermediate-3 .index-tile:nth-child(5) {
+        background-color: #072233;
+        animation: changeColorFifthRow 10s alternate infinite;
+        animation-delay: 6s;
+    }
+
+    #sky-layout {
+        width: 0;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        column-gap: 0px;
+        position: absolute;
+        top: 0;
+        right: 15%;
+        z-index: 1;
+        opacity: 0;
+    }
+
+    #sky-layout.gap-enable {
+        width: 300px;
+        column-gap: 10px;
+        opacity: 1;
+        transition: width cubic-bezier(0, 0.7, 0, 1) 0.3s, opacity ease-in-out 0.3s;
+    }
+
+    #my-logo {
+        width: 30px;
+        filter: invert(1);
+    }
+
+    #my-signature {
+        width: 300px;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    #my-sign {
+        width: 5em;
+    }
+
+    #my-logo {
+        width: 30px;
+    }
+
+    #my-signature {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+    }
+
+    .sky-signature {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #sky-flip-card {
+        background-color: transparent;
+        border: none;
+        cursor: pointer;
+    }
+
+    #my-sign {
+        width: 7em;
+        filter: invert(1);
+    }
+
+    .sky-card {
+        width: 300px;
+        height: 200px;
+        padding: 10px;
+        border-radius: 16px;
+        background-color: hsl(198 17% 93% / 1);
+        color: black;
+        overflow: hidden;
+        position: relative;
+        box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.05);
+    }
+
+    #sky-bottom-block {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+        color: white;
+    }
+
+    .sky-card-title {
+        font-family:
+            "Source Han Sans",
+            system-ui,
+            -apple-system,
+            BlinkMacSystemFont,
+            "Segoe UI",
+            Roboto,
+            Oxygen,
+            Ubuntu,
+            Cantarell,
+            "Open Sans",
+            "Helvetica Neue",
+            sans-serif;
+        font-weight: bold;
+        font-size: 20px;
+    }
+
+    .sky-email {
+        font-family:
+            "Source Han Sans",
+            system-ui,
+            -apple-system,
+            BlinkMacSystemFont,
+            "Segoe UI",
+            Roboto,
+            Oxygen,
+            Ubuntu,
+            Cantarell,
+            "Open Sans",
+            "Helvetica Neue",
+            sans-serif;
+        text-decoration: none;
+        color: unset;
+        opacity: 0.6;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 1em;
+    }
+
+    .sky-email .material-symbols-outlined {
+        font-size: 18px;
+    }
+
+    .sky-card button {
+        border: none;
+        background-color: transparent;
+        position: absolute;
+        right: 10px;
+        bottom: 10px;
+        border-radius: 6px;
+        width: 40px;
+        height: 40px;
+        overflow: hidden;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: black;
+    }
+
+    .sky-card button:hover {
+        background-color: hsl(198 17% 83% / 1);
+    }
+
+    .sky-more {
+        border: none;
+        width: 200px;
+        height: 0px;
+        padding: 0px;
+        transition: width cubic-bezier(0, 0.7, 0, 1) 0.3s,
+            height cubic-bezier(0, 0.7, 0, 1) 0.3s,
+            padding cubic-bezier(0, 0.7, 0, 1) 0.3s,
+            opacity ease-in-out 0.3s;
+        opacity: 0;
+    }
+
+    .sky-more ul {
+        list-style: none;
+        padding-left: 0;
+        margin-top: 0;
+        margin-bottom: 0;
+        display: grid;
+        height: 200px;
+        grid-template-rows: repeat(4, 1fr);
+    }
+
+    .sky-more ul a {
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+        color: unset;
+        font-size: 20px;
+        border-radius: 6px;
+        transition: all 0.2s;
+    }
+
+    .sky-more ul a:hover {
+        background-color: rgba(159, 159, 159, 0.3);
+    }
+
+    .sky-more ul li {
+        font-family:
+            "Source Han Sans",
+            system-ui,
+            -apple-system,
+            BlinkMacSystemFont,
+            "Segoe UI",
+            Roboto,
+            Oxygen,
+            Ubuntu,
+            Cantarell,
+            "Open Sans",
+            "Helvetica Neue",
+            sans-serif;
+        padding-left: 10px;
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .sky-more.show {
+        background-color: #f3f3f3;
+        width: 300px;
+        height: 200px;
+        padding: 10px;
+        opacity: 1;
+    }
+
+    #list-of-contacts {
+        width: 100%;
+        overflow: scroll;
+        list-style: none;
+        padding-left: 0;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+
+    #list-of-contacts li {
+        display: flex;
+        flex-direction: column;
+        padding-bottom: 10px;
+        border-bottom: solid 1px #eee;
+    }
+
+    #list-of-contacts img {
+        width: 1.5em;
+        height: 1.5em;
+    }
+
+    @media (prefers-color-scheme: dark) {
+        .sky-card {
+            background-color: hsl(198 17% 23% / 1);
+            color: white;
+        }
+
+        #my-signature img {
+            filter: invert(1);
+        }
+
+        #sky-flip-card .material-symbols-outlined {
+            color: white;
+        }
+
+        #sky-backdrop {
+            background-image: url(https://media.jerryly.cn/Image-Cropped-Dark.jpg);
+        }
+
+        #list-of-contacts img {
+            filter: invert(1);
+        }
+
+        #list-of-contacts li {
+            border-bottom-color: #333;
+        }
+
+        .sky-more.show {
+            background-color: #333;
+        }
+    }
+
+    .sky-note-box,
+    .sky-note-button {
+        width: 66%;
+        position: absolute;
+        top: 60px;
+        left: 17%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .sky-note-button {
+        top: unset;
+        bottom: 60px;
+        width: unset;
+        left: calc(50% - 22px);
+    }
+
+    .sky-note {
+        width: calc(100% - 20px);
+        font-size: 14px;
+        border-radius: 10px;
+        background-color: hsla(189, 52%, 55%, 0.5);
+        backdrop-filter: blur(12px);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px;
+    }
+
+    .sky-note-button .sky-note {
+        background-color: transparent;
+        backdrop-filter: unset;
+        opacity: 0.4;
+    }
+
+    .sky-note a {
+        color: unset;
+    }
+
+    /* styling for home page readability concerns */
+
+    body {
+        margin: 0;
+    }
+
+    #counter-buttons {
+        opacity: 0;
+        transition: all 0.2s;
+    }
+
+    #counter.expand #counter-buttons {
+        opacity: 1;
+    }
+
+    #counter-buttons:hover {
+        opacity: 1;
+    }
+
+    .content-unit {
+        margin-top: 0;
+        height: 100vh;
+        width: 100%;
+        margin-left: 0;
+    }
+</style>
+
 <div id="welcome-image">
     <span id="welcome-title">Handcrafting the internet</span>
 </div>
@@ -258,6 +773,104 @@
     </div>
 </div>
 
+<div class="sky-note-box">
+    <div class="sky-note">
+        <span class="material-symbols-outlined">block</span>
+        <span>
+            This website does not contain AI-generated content. <a
+                href="https://blog.jerryly.cn/posts/20260904.html">Learn more.</a>
+        </span>
+        <span>
+            本网站不含 AI 生成内容。 <a href="https://blog.jerryly.cn/posts/20260904.html">了解更多。</a>
+        </span>
+    </div>
+</div>
+<div id="index-tiles">
+    <div class="index-intermediate" id="index-intermediate-1">
+        <div class="index-tile"></div>
+        <div class="index-tile"></div>
+        <div class="index-tile">
+            <div id="my-signature">
+                <img id="my-logo" src="https://media.jerryly.cn/home-square-dark.svg" />
+            </div>
+        </div>
+        <div class="index-tile"></div>
+        <div class="index-tile"></div>
+    </div>
+    <div class="index-intermediate" id="index-intermediate-2">
+        <div class="index-tile"></div>
+        <div class="index-tile"></div>
+        <div class="index-tile">
+            <div id="sky-bottom-block">
+                <span class="text-n sky-card-title">李江源</span>
+                <span class="text-n sky-card-text">
+                    <a class="sky-email" href="mailto:jerrylimee@icloud.com">
+                        <span class="material-symbols-outlined">mail</span>
+                        <span id="sky-actual-email-string">jerrylimee@icloud.com</span>
+                    </a>
+                </span>
+            </div>
+        </div>
+        <div class="index-tile"></div>
+        <div class="index-tile"></div>
+    </div>
+    <div class="index-intermediate" id="index-intermediate-3">
+        <div class="index-tile"></div>
+        <div class="index-tile"></div>
+        <div class="index-tile sky-signature">
+            <button id="sky-flip-card">
+                <img id="my-sign" src="https://media.jerryly.cn/May-20-2026-signature.svg" />
+            </button>
+        </div>
+        <div class="index-tile"></div>
+        <div class="index-tile"></div>
+    </div>
+</div>
+<div id="sky-layout">
+    <div class="sky-card sky-more">
+        <ul>
+            <a href="https://jerryly.cn/pages/gallery.html">
+                <li>
+                    <span class="material-symbols-outlined">
+                        gallery_thumbnail
+                    </span>
+                    Gallery
+                </li>
+            </a>
+            <a href="https://jerryly.cn/pages/resume.html">
+                <li>
+                    <span class="material-symbols-outlined">
+                        account_box
+                    </span>
+                    Resume
+                </li>
+            </a>
+            <a
+                href="https://raw.githubusercontent.com/jerrylimes/jerrylimes/refs/heads/main/Resume%20(Mar%2014%202026).pdf">
+                <li>
+                    <span class="material-symbols-outlined">
+                        account_box
+                    </span>
+                    Resume (PDF)
+                </li>
+            </a>
+            <a href="../pages/contacts.html">
+                <li>
+                    <span class="material-symbols-outlined">
+                        headset_mic
+                    </span>
+                    Contacts
+                </li>
+            </a>
+        </ul>
+    </div>
+</div>
+<div class="sky-note-button">
+    <div class="sky-note">
+        <span class="material-symbols-outlined">pause</span>
+    </div>
+</div>
+
 <div id="copyright-info">
     <p class="copyright-info" xmlns:cc="http://creativecommons.org/ns#" xmlns:dct="http://purl.org/dc/terms/"><a
             property="dct:title" rel="cc:attributionURL" href="https://jerryly.top">The website
@@ -315,4 +928,25 @@
     setInterval(() => {
         updateCountdown("October 3, 2025 00:00:00", "days", "hours", "minutes", "seconds");
     }, 1000);
+</script>
+
+<script>
+    $("#sky-flip-card").click(() => {
+        $("#sky-layout").toggleClass("gap-enable");
+        $(".sky-more").toggleClass("show");
+    });
+    $(".sky-note-button").click(function () {
+        const icon = $(this).find(".material-symbols-outlined");
+        const isPaused = icon.text().trim() === "pause";
+
+        document.getAnimations().forEach((animation) => {
+            if (isPaused) {
+                animation.pause();
+            } else {
+                animation.play();
+            }
+        });
+
+        icon.text(isPaused ? "play_arrow" : "pause");
+    });
 </script>
