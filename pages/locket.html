@@ -405,59 +405,6 @@
         opacity: 1;
     }
 
-    #list-of-contacts {
-        width: 100%;
-        overflow: scroll;
-        list-style: none;
-        padding-left: 0;
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 20px;
-    }
-
-    #list-of-contacts li {
-        display: flex;
-        flex-direction: column;
-        padding-bottom: 10px;
-        border-bottom: solid 1px #eee;
-    }
-
-    #list-of-contacts img {
-        width: 1.5em;
-        height: 1.5em;
-    }
-
-    @media (prefers-color-scheme: dark) {
-        .sky-card {
-            background-color: hsl(198 17% 23% / 1);
-            color: white;
-        }
-
-        #my-signature img {
-            filter: invert(1);
-        }
-
-        #sky-flip-card .material-symbols-outlined {
-            color: white;
-        }
-
-        #sky-backdrop {
-            background-image: url(https://media.jerryly.cn/Image-Cropped-Dark.jpg);
-        }
-
-        #list-of-contacts img {
-            filter: invert(1);
-        }
-
-        #list-of-contacts li {
-            border-bottom-color: #333;
-        }
-
-        .sky-more.show {
-            background-color: #333;
-        }
-    }
-
     .sky-note-box,
     .sky-note-button {
         width: 66%;

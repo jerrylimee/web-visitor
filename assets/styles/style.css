@@ -376,8 +376,16 @@
 }
 
 @media (prefers-color-scheme: dark) {
+    #homepage-grid {
+        background-color: hsl(83, 55%, 44%);
+    }
+
+    #homepage-grid>a {
+        background-color: hsl(83, 55%, 34%);
+    }
+
     #homepage-grid>a:hover {
-        background-color: rgb(96, 96, 96);
+        background-color: hsl(83, 55%, 30%);
     }
 
     #my-logo,
@@ -412,5 +420,41 @@
         width: 90%;
         margin-left: 5%;
         margin-top: calc(50vh - 100px);
+    }
+}
+
+#list-of-contacts {
+    width: 100%;
+    overflow: scroll;
+    list-style: none;
+    padding-left: 0;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+#list-of-contacts li {
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 10px;
+    border-bottom: solid 1px #eee;
+}
+
+#list-of-contacts img {
+    width: 1.5em;
+    height: 1.5em;
+}
+
+@media (prefers-color-scheme: dark) {
+    #list-of-contacts img {
+        filter: invert(1);
+    }
+
+    #list-of-contacts li {
+        border-bottom-color: #333;
+    }
+
+    .sky-more.show {
+        background-color: #333;
     }
 }
