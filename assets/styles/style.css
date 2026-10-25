@@ -312,14 +312,13 @@
     width: 500px;
     height: 160px;
     margin-left: calc(50% - 256px);
-    margin-top: calc(50% - 200px);
+    margin-top: calc(50vh - 86px);
     display: grid;
     grid-template-columns: 1fr 1fr;
     overflow: hidden;
     gap: 3px;
     border-radius: 16px;
     padding: 6px;
-    background-color: #DCEDC1;
 }
 
 #homepage-grid img {
@@ -345,7 +344,6 @@
     justify-content: start;
     align-items: center;
     border-radius: 10px;
-    background-color: hsl(83, 55%, 74%);
 }
 
 #homepage-grid #homepage-gallery {
@@ -378,7 +376,6 @@
     padding: 0 12px;
     height: 100%;
     border-radius: 6px;
-    background-color: hsl(83, 55%, 74%);
 }
 
 #homepage-resume-pdf>a {
@@ -394,23 +391,10 @@
 
 #homepage-grid>a:hover,
 #homepage-resume-pdf>a:hover {
-    background-color: hsl(83, 55%, 80%);
+    background-color: hsla(0, 0%, 50%, 0.5);
 }
 
 @media (prefers-color-scheme: dark) {
-    #homepage-grid {
-        background-color: hsl(83, 55%, 44%);
-    }
-
-    #homepage-grid>a,
-    #homepage-resume-pdf>a {
-        background-color: hsl(83, 55%, 34%);
-    }
-
-    #homepage-grid>a:hover,
-    #homepage-resume-pdf>a:hover {
-        background-color: hsl(83, 55%, 30%);
-    }
 
     #my-logo,
     #my-sign {
@@ -443,7 +427,7 @@
     #homepage-grid {
         width: 90%;
         margin-left: 5%;
-        margin-top: calc(50vh - 100px);
+        margin-top: calc(50vh - 86px);
     }
 }
 
@@ -480,5 +464,65 @@
 
     .sky-more.show {
         background-color: #333;
+    }
+}
+
+#index-backdrop {
+    width: 100vw;
+    overflow-x: hidden;
+    position: absolute;
+    z-index: -2;
+    top: 0;
+    left: 0;
+}
+
+.index-circle {
+    width: 1200px;
+    height: 1200px;
+    border-radius: 600px;
+    filter: blur(100px);
+    background-image: radial-gradient(circle at top, #fff 20%, #00d3d8, #7dbfff);
+    animation: bubble 5s infinite alternate;
+    overflow: hidden;
+    position: relative;
+    top: -1200px;
+    left: 0px;
+    transition: all 0.2s;
+    display: block;
+}
+
+@media (prefers-color-scheme: dark) {
+    .index-circle {
+        background-image: radial-gradient(circle at top, #000 20%, #00d3d8, #2400d8, #be7dff);
+    }
+}
+
+.index-label {
+    font-family: 'Inter', 'Source Han Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight: bold;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    gap: 10px;
+    padding-left: 8px;
+}
+
+#index-content-layer hr {
+    background-color: transparent;
+    border: none;
+    margin-bottom: 300px;
+}
+
+@keyframes bubble {
+    0% {
+        top: -1200px;
+        left: 0;
+        transform: rotate(0deg);
+    }
+
+    100% {
+        top: -100px;
+        left: 100px;
+        transform: rotate(340deg);
     }
 }
