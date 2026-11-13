@@ -246,6 +246,11 @@
     backdrop-filter: blur(4px);
     overflow-x: hidden;
     overflow-y: scroll;
+    box-shadow: 0 1px 1px hsl(0deg 0% 0% / 0.075),
+        0 2px 2px hsl(0deg 0% 0% / 0.075),
+        0 4px 4px hsl(0deg 0% 0% / 0.075),
+        0 8px 8px hsl(0deg 0% 0% / 0.075),
+        0 16px 16px hsl(0deg 0% 0% / 0.075);
 }
 
 #search input {
@@ -359,7 +364,7 @@
     }
 
     .ais-SearchBox-form {
-        background-color: rgb(34, 34, 34) !important;
+        background-color: rgb(34, 34, 34);
     }
 
     #hits .ais-Hits--empty {
@@ -369,7 +374,7 @@
     }
 
     #hits {
-        box-shadow: none;
+        background-color: rgb(34, 34, 34);
     }
 
     #watermark {
