@@ -23,10 +23,6 @@
     height: 100vh;
 }
 
-.content-unit {
-    overflow: hidden;
-}
-
 /* index.html */
 
 #disc {
@@ -130,10 +126,6 @@
     #sky-bottom-block {
         flex-direction: column;
         gap: 10px !important;
-    }
-
-    #sky-actual-email-string {
-        display: none;
     }
 }
 
@@ -319,10 +311,16 @@
     margin-top: calc(50vh - 86px);
     display: grid;
     grid-template-columns: 1fr 1fr;
-    overflow: hidden;
     gap: 3px;
     border-radius: 16px;
     padding: 6px;
+    background-image: linear-gradient(#ffffff00, #eee);
+    box-shadow: 0 1px 1px hsl(0deg 0% 0% / 0.075),
+        0 2px 2px hsl(0deg 0% 0% / 0.075),
+        0 4px 4px hsl(0deg 0% 0% / 0.075),
+        0 8px 8px hsl(0deg 0% 0% / 0.075),
+        0 16px 16px hsl(0deg 0% 0% / 0.075);
+    scale: 0.9;
 }
 
 #homepage-grid img {
@@ -348,6 +346,7 @@
     justify-content: start;
     align-items: center;
     border-radius: 10px;
+    background-color: #eee;
 }
 
 #homepage-grid #homepage-gallery {
@@ -380,6 +379,7 @@
     padding: 0 12px;
     height: 100%;
     border-radius: 6px;
+    background-color: #eee;
 }
 
 #homepage-resume-pdf>a {
@@ -399,6 +399,14 @@
 }
 
 @media (prefers-color-scheme: dark) {
+    #homepage-grid {
+        background-image: linear-gradient(Canvas, #33333373);
+    }
+
+    #homepage-grid>a,
+    #homepage-resume-pdf>a {
+        background-color: #333;
+    }
 
     #my-logo,
     #my-sign {
@@ -435,6 +443,43 @@
     }
 }
 
+@media (max-width: 430px) {
+    .content-unit {
+        width: 100%;
+        margin-left: 0;
+    }
+
+    #homepage-grid {
+        width: calc(100% - 12px);
+        height: 280px;
+        scale: unset;
+        margin-left: 0;
+        grid-template-columns: 1fr;
+        margin-top: calc(50vh - 140px);
+    }
+
+    #homepage-grid #homepage-gallery {
+        border-bottom-right-radius: 6px;
+        border-bottom-left-radius: 6px;
+        border-top-right-radius: 10px;
+    }
+
+    #homepage-grid #homepage-resume {
+        border-radius: 6px;
+    }
+
+    #homepage-grid #homepage-resume-pdf {
+        border-top-right-radius: 6px;
+        border-top-left-radius: 6px;
+        border-bottom-left-radius: 12px;
+        border-bottom-right-radius: 12px;
+    }
+
+    #homepage-grid #homepage-contacts {
+        border-radius: 6px;
+    }
+}
+
 #list-of-contacts {
     width: 100%;
     overflow: scroll;
@@ -468,43 +513,6 @@
 
     .sky-more.show {
         background-color: #333;
-    }
-}
-
-#index-backdrop {
-    width: 100vw;
-    overflow-x: hidden;
-    position: absolute;
-    z-index: -2;
-    top: 0;
-    left: 0;
-    scrollbar-width: none;
-    -ms-overflow-style: none;
-}
-
-#index-backdrop::-webkit-scrollbar {
-    display: none;
-}
-
-.index-circle {
-    width: 1200px;
-    height: 1200px;
-    border-radius: 600px;
-    filter: blur(100px);
-    background-image: radial-gradient(circle at left, #00d3d8, #c0ff7d);
-    animation: bubble 10s infinite alternate;
-    overflow: hidden;
-    position: relative;
-    top: -1200px;
-    left: 0px;
-    transition: all 0.2s;
-    display: block;
-    scale: 2;
-}
-
-@media (prefers-color-scheme: dark) {
-    .index-circle {
-        background-image: radial-gradient(circle at top, #00d3d8, #2400d8, #be7dff);
     }
 }
 
