@@ -364,7 +364,7 @@
     }
 
     .ais-SearchBox-form {
-        background-color: rgb(34, 34, 34);
+        background-color: rgb(34, 34, 34) !important;
     }
 
     #hits .ais-Hits--empty {
@@ -374,7 +374,7 @@
     }
 
     #hits {
-        background-color: rgb(34, 34, 34);
+        background-color: rgb(34, 34, 34) !important;
     }
 
     #watermark {
